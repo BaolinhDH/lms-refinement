@@ -1,3 +1,77 @@
+/*
+    site.css
+    Overall site-wide CSS. Should be linked in every page and contain general styling for every page.
+*/
+
+/* Elements */
 body {
     background: white;
+}
+hr {
+
+}
+a {
+
+}
+a.activeLink{ /* For links that lead to the same page you are on */
+    color: black;
+}
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+
+i {
+
+}
+
+header {
+    
+}
+
+aside {
+
+}
+
+main {
+
+}
+
+/* Navigation bar styling */
+nav {
+
+}
+nav .navButton{
+    
+}
+nav i{
+
+}
+nav a{
+
+}
+nav .label{
+
+}
+nav .navDropDown{
+
+}
+nav .navDropDownContent{
+
+}
+
+/* Class used to distinguish dummy content */
+a.dummy{
+
+}
+div.dummy{
+
 }

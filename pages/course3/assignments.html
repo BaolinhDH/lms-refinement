@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--  
+    assignments.html
+    generic Assignments html template page
+    non-generic contents populated using javascript
+-->
+
+<html lang="en">
+    <head>
+        <meta name="courseID" content="1"> <!-- course ID meta content to distinguish course pages from each other. Use document.querySelector('meta[name="courseID"]').content to select from DOM object -->
+        <link rel="stylesheet" href="../styles/site.css" />
+        <link rel="stylesheet" href="../styles/modules.css" />
+        <script src="../scripts/modules.js"></script>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <title>Course Modules</title> <!-- Use Javascript to write course name into title -->
+    </head>
+
+    <body>
+        <nav>
+            <a href="index.html"><div class="navButton">
+                <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
+            </div></a>
+
+            <a href=""><div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label">Log Out</span>
+            </div></a>
+
+            <a href="index.html"><div class="navButton">
+                <i class="fa-solid fa-gauge"></i>
+                <span class="label">Dashboard</span>
+            </div></a>
+
+            <div class="navDropDown"><a href="">
+                <div class="navButton">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="label">Courses</span>
+                </div></a>
+                <div class="navDropDownContent">
+                    <i class="fa-solid fa-xmark" id="close-dropdown"></i>
+                    <h2>Courses</h2>
+                    <hr>
+                    <div>
+                        <a href="course1/modules.html"><span id="courseDropDown1"></span></a>
+                        <h4 id="courseDropDownSemester1"></h4>
+                    </div>
+                    <div>
+                        <a href="course2/modules.html"><span id="courseDropDown2"></span></a>
+                        <h4 id="courseDropDownSemester2"></h4>
+                    </div>
+                    <div>
+                        <a href="course3/modules.html"><span id="courseDropDown3"></span></a>
+                        <h4 id="courseDropDownSemester3"></h4>
+                    </div>
+                    <div>
+                        <a href="course4/modules.html"><span id="courseDropDown4"></span></a>
+                        <h4 id="courseDropDownSemester4"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <a href=""><div class="navButton dummy">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span class="label">Calendar</span>
+            </div></a>
+
+            <a href=""><div class="navButton dummy">
+                <i class="fa-solid fa-book-open"></i>
+                <span class="label">Student Resources</span>
+            </div></a>
+        </nav>
+
+        <header> <!-- Header.  -->
+            
+        </header>
+
+        <aside> <!-- Secondary navigation. Contains in-course navigation -->
+
+        </aside>
+
+        <main>
+
+        </main>
+    </body>
+</html>
