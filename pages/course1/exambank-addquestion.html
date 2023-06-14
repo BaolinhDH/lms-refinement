@@ -9,9 +9,6 @@
         <link rel="stylesheet" href="../../styles/site.css" />
         <link rel="stylesheet" href="../../styles/exambank.css" />
         <meta name="courseID" content="1"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages -->
-        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
-        <script src="../../scripts/login.js"></script>
-        <script src="../../scripts/exambank.js"></script>
         <title>UI/UX - Add Question</title>
     </head>
 
@@ -20,6 +17,11 @@
             <a href="../dashboard.html"><div class="navButton">
                 <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
             </div></a>
+
+            <div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label" id="currentUser">Logged in as Lecturer</span>
+            </div>
 
             <a href="../index.html"><div class="navButton">
                 <i class="fa-solid fa-user"></i>
@@ -41,19 +43,19 @@
                     <h2>Courses</h2>
                     <hr>
                     <div>
-                        <a href="../course1/modules.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
+                        <a href="../course1/home.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
                         <h4 id="courseDropDownSemester1">2024 Winter Semester</h4>
                     </div>
                     <div>
-                        <a href="../course2/modules.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
+                        <a href="../course2/home.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
                         <h4 id="courseDropDownSemester2">2024 Fall Semester</h4>
                     </div>
                     <div>
-                        <a href="../course3/modules.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
+                        <a href="../course3/home.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
                         <h4 id="courseDropDownSemester3">2024 Fall Semester</h4>
                     </div>
                     <div>
-                        <a href="../course4/modules.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
+                        <a href="../course4/home.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
                         <h4 id="courseDropDownSemester4">2024 Fall Semester</h4>
                     </div>
                 </div>
@@ -88,5 +90,7 @@
         <main>
             <h1>UI/UX Design - Add Questions to Exam Bank</h1>
         </main>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/exambank.js"></script>
     </body>
 </html>

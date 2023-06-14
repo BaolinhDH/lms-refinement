@@ -9,9 +9,6 @@
         <link rel="stylesheet" href="../../styles/site.css" />
         <link rel="stylesheet" href="../../styles/assignments.css" />
         <meta name="courseID" content="1"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages (and assignments) -->
-        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
-        <script src="../../scripts/login.js"></script>
-        <script src="../../scripts/exambank.js"></script>
         <title>UI/UX Design Assignments</title>
     </head>
 
@@ -20,6 +17,11 @@
             <a href="../dashboard.html"><div class="navButton">
                 <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
             </div></a>
+
+            <div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label" id="currentUser"></span>
+            </div>
 
             <a href="../index.html"><div class="navButton">
                 <i class="fa-solid fa-user"></i>
@@ -81,7 +83,8 @@
                 <h2><a href="discussions.html">Discussions</a></h2>
                 <h2><a href="bigbluebutton.html">Online Lectures (Big Blue Button)</a></h2>
                 <h2><a href="home.html">Course Info</a></h2>
-                <h2><a class="lecturer" href="exambank.html">Exam Bank</a></h2>
+                <h2><a href="exambank.html" class="lecturer">Exam Bank</a></h2>
+                <!-- Exam Bank is currently not hidden when logged in as a student -->
             </aside>
         </header>
 
@@ -100,5 +103,8 @@
                 <h2>Grades</h2>
             </div>
         </main>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/dashboard.js"></script>
+        <script src="../../scripts/exambank.js"></script>
     </body>
 </html>
