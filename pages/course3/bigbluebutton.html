@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--  
+    bigbluebutton.html
+    Online Lecture (big blue button) html page
+-->
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../styles/site.css" />
+        <link rel="stylesheet" href="../../styles/bigbluebutton.css" />
+        <title>Intergrated Applications Online Lectures</title>
+    </head>
+
+    <body>
+        <nav>
+            <a href="../dashboard.html"><div class="navButton">
+                <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
+            </div></a>
+
+            <div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label" id="currentUser"></span>
+            </div>
+
+            <a href="../index.html"><div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label">Log Out</span>
+            </div></a>
+
+            <a href="../dashboard.html"><div class="navButton">
+                <i class="fa-solid fa-gauge"></i>
+                <span class="label">Dashboard</span>
+            </div></a>
+
+            <div class="navDropDown">
+                <a><div class="navButton">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="label">Courses</span>
+                </div></a>
+                <div class="navDropDownContent">
+                    <i class="fa-solid fa-xmark" id="close-dropdown"></i>
+                    <h2>Courses</h2>
+                    <hr>
+                    <div>
+                        <a href="../course1/home.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
+                        <h4 id="courseDropDownSemester1">2024 Winter Semester</h4>
+                    </div>
+                    <div>
+                        <a href="../course2/home.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
+                        <h4 id="courseDropDownSemester2">2024 Fall Semester</h4>
+                    </div>
+                    <div>
+                        <a href="../course3/home.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
+                        <h4 id="courseDropDownSemester3">2024 Fall Semester</h4>
+                    </div>
+                    <div>
+                        <a href="../course4/home.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
+                        <h4 id="courseDropDownSemester4">2024 Fall Semester</h4>
+                    </div>
+                </div>
+            </div>
+
+            <a><div class="navButton dummy">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span class="label">Calendar</span>
+            </div></a>
+
+            <a><div class="navButton dummy">
+                <i class="fa-solid fa-book-open"></i>
+                <span class="label">Student Resources</span>
+            </div></a>
+        </nav>
+
+        <header> <!-- Header.  -->
+            <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
+            <span><h2><a href="modules.html">Intergrated Applications</a> <span style="color: grey">></span> Online Lectures (Big Blue Button)</h2></span>
+
+            <aside> <!-- Secondary navigation. Contains in-course navigation -->
+                <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
+                <h2><a href="home.html">Home</a></h2>
+                <h2><a href="modules.html">Modules</a></h2>
+                <h2><a href="assignments.html">Assignments</a></h2>
+                <h2><a href="discussions.html">Discussions</a></h2>
+                <h2><a class="activeLink" href="bigbluebutton.html">Online Lectures (Big Blue Button)</a></h2>
+                <!-- <h2><a href="home.html">Course Info</a></h2> -->
+                <h2><a class="lecturer" href="exambank.html">Exam Bank</a></h2>
+            </aside>
+        </header>
+
+        <main>
+            <h1>Intergrated Applications Online Lectures (Big Blue Button)</h1>
+        </main>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/hide_exam.js"></script>
+    </body>
+</html>

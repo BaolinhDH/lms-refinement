@@ -78,11 +78,11 @@
 
             <aside> <!-- Secondary navigation. Contains in-course navigation -->
                 <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
+                <h2><a href="home.html">Home</a></h2>
                 <h2><a href="modules.html">Modules</a></h2>
                 <h2><a href="assignments.html">Assignments</a></h2>
                 <h2><a href="discussions.html">Discussions</a></h2>
                 <h2><a href="bigbluebutton.html">Online Lectures (Big Blue Button)</a></h2>
-                <h2><a href="home.html">Course Info</a></h2>
                 <h2><a class="lecturer activeLink" href="exambank.html">Exam Bank</a></h2>
             </aside>
         </header>
@@ -90,6 +90,12 @@
         <main>
             <h1>UI/UX Design - Create an Exam</h1>
             <form action="exambank-finalizeexam.html" method="POST">
+                <label for="examName">Exam Name: </label>
+                <input id="examName" type="text" placeholder="Enter Exam Name"><br>
+                <label for="examDueDate">Due Date: </label>
+                <input id="examDueDate" type="text" placeholder="YYYY-MM-DD"><br>
+                <label for="examDueTime">Due Time: </label>
+                <input id="examDueTime" type="text" placeholder="HH:MM"><br>
                 <input type="submit" value="Next">
             </form>
         </main>
