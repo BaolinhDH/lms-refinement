@@ -90,7 +90,7 @@
         <main>
             <h1>UI/UX Design - Add Questions to Exam Bank</h1>
 
-            <div id="addQuestions">
+            <form id="addQuestions">
                 <!-- Question Text Box -->
                 <label>Question: </label>
                 <input type="text" id="questionInput" placeholder="Enter A Question"><br>
@@ -107,7 +107,7 @@
 
                 <!-- Question Types -->
                 <label for="questionType">Type:</label>
-                <select name="questionType" id="questionType">
+                <select name="questionType" id="questionType" onchange="selectionChangeHandler(this)">
                     <option selected>-- Select a Question Type --</option>
                     <option value="multipleChoice">Multiple Choice</option>
                     <option value="multipleAnswers">Select Multiple Answers</option>
@@ -119,39 +119,44 @@
                     <div id="answer1" value="incorrect" style="display:none;">
                         <label for="answerA">A:</label>
                         <input type="text" id="answerA" placeholder="Enter An Answer">
-                        <input type="radio" name="correctChoice" for="answerA" id="A_correct">
+                        <input type="checkbox" name="correctChoice" for="answerA"
+                                    id="A_correct" onchange="tickHandler('A_correct', this)">
                     </div>
                     <div id="answer2" value="incorrect" style="display:none;">
                         <label for="answerB">B:</label>
                         <input type="text" id="answerB" placeholder="Enter An Answer">
-                        <input type="radio" name="correctChoice" for="answerB" id="B_correct">
+                        <input type="checkbox" name="correctChoice" for="answerB"
+                                    id="B_correct" onchange="tickHandler('B_correct', this)">
                     </div>
                     <div id="answer3" value="incorrect" style="display:none;">
                         <label for="answerC">C:</label>
                         <input type="text" id="answerC" placeholder="Enter An Answer">
-                        <input type="radio" name="correctChoice" for="answerC" id="C_correct">
+                        <input type="checkbox" name="correctChoice" for="answerC"
+                                    id="C_correct" onchange="tickHandler('C_correct', this)">
                     </div>
                     <div id="answer4" value="incorrect" style="display:none;">
                         <label for="answerD">D:</label>
                         <input type="text" id="answerD" placeholder="Enter An Answer">
-                        <input type="radio" name="correctChoice" for="answerD" id="D_correct">
+                        <input type="checkbox" name="correctChoice" for="answerD"
+                                    id="D_correct" onchange="tickHandler('D_correct', this)">
                     </div>
                     <div id="answer5" value="incorrect" style="display:none;">
                         <label for="answerE">E:</label>
                         <input type="text" id="answerE" placeholder="Enter An Answer">
-                        <input type="radio" name="correctChoice" for="answerE" id="E_correct">
+                        <input type="checkbox" name="correctChoice" for="answerE"
+                                    id="E_correct" onchange="tickHandler('E_correct', this)">
                     </div>
                 </div>
                 <!-- Answer contents go here -->
 
                 <!-- Writes information onto the database json file -->
-                <!-- Currently no function -->
-                <!-- <a href="exambank.html"><button id="addQuestionBtn">Add Question</button></a> -->
-                <button id="addQuestionBtn">Add Question</button>
+                <a href="exambank.html">
+                    <button id="addQuestionBtn" onclick="addQuestion()">Add Question</button>
+                </a>
             </form>
 
         </main>
         <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
-        <script src="../../scripts/exambank.js"></script>
+        <script src="../../scripts/add_question.js"></script>
     </body>
 </html>

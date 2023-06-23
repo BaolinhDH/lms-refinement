@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--  
+    exambank.html
+    Exam Bank home html page
+-->
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../styles/site.css" />
+        <link rel="stylesheet" href="../../styles/exambank.css" />
+        <meta name="courseID" content="1"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages -->
+        <title>UI/UX Design Exam Bank</title>
+    </head>
+
+    <body>
+        <nav>
+            <a href="../dashboard.html"><div class="navButton">
+                <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
+            </div></a>
+
+            <div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label" id="currentUser">Logged in as Lecturer</span>
+            </div>
+
+            <a href="../index.html"><div class="navButton">
+                <i class="fa-solid fa-user"></i>
+                <span class="label">Log Out</span>
+            </div></a>
+
+            <a href="../dashboard.html"><div class="navButton">
+                <i class="fa-solid fa-gauge"></i>
+                <span class="label">Dashboard</span>
+            </div></a>
+
+            <div class="navDropDown">
+                <a><div class="navButton">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="label">Courses</span>
+                </div></a>
+                <div class="navDropDownContent">
+                    <i class="fa-solid fa-xmark" id="close-dropdown"></i>
+                    <h2>Courses</h2>
+                    <hr>
+                    <div>
+                        <a href="../course1/home.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
+                        <h4 id="courseDropDownSemester1">2024 Winter Semester</h4>
+                    </div>
+                    <div>
+                        <a href="../course2/home.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
+                        <h4 id="courseDropDownSemester2">2024 Fall Semester</h4>
+                    </div>
+                    <div>
+                        <a href="../course3/home.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
+                        <h4 id="courseDropDownSemester3">2024 Fall Semester</h4>
+                    </div>
+                    <div>
+                        <a href="../course4/home.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
+                        <h4 id="courseDropDownSemester4">2024 Fall Semester</h4>
+                    </div>
+                </div>
+            </div>
+
+            <a><div class="navButton dummy">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span class="label">Calendar</span>
+            </div></a>
+
+            <a><div class="navButton dummy">
+                <i class="fa-solid fa-book-open"></i>
+                <span class="label">Student Resources</span>
+            </div></a>
+        </nav>
+
+        <header> <!-- Header.  -->
+            <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
+            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> Assignments</h2></span>
+
+            <aside> <!-- Secondary navigation. Contains in-course navigation -->
+                <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
+                <h2><a href="home.html">Home</a></h2>
+                <h2><a href="modules.html">Modules</a></h2>
+                <h2><a href="assignments.html">Assignments</a></h2>
+                <h2><a href="discussions.html">Discussions</a></h2>
+                <h2><a href="bigbluebutton.html">Online Lectures (Big Blue Button)</a></h2>
+                <!-- <h2><a href="home.html">Course Info</a></h2> -->
+                <h2><a class="lecturer activeLink" href="exambank.html">Exam Bank</a></h2>
+            </aside>
+        </header>
+
+        <main>
+            <h1 id="examTitle">Exam Title Goes Here</h1>
+            <hr>
+
+            <div class="examBody">
+                <div name="question1" class="question">
+                    <label for="questionNum1">Question 1: </label>
+                    <span name="questionNum1" id="question5text">Question Text Here</p>
+                    <div id="answer1">
+                        <div id="question1answer1">
+                            <label for="answerA">A: </label>
+                            <span name="answerA">Answer A Goes Here</span>
+                            <input name="userInput1" type="checkbox" onchange="tickHandler(this, 'userInput1')">
+                        </div>
+                        <div id="question1answer2">
+                            <label for="answerB">B: </label>
+                            <span name="answerB">Answer B Goes Here</span>
+                            <input name="userInput1" type="checkbox" onchange="tickHandler(this, 'userInput1')">
+                        </div>
+                        <div id="question1answer3">
+                            <label for="answerA">C: </label>
+                            <span name="answerA">Answer C Goes Here</span>
+                            <input name="userInput1" type="checkbox" onchange="tickHandler(this, 'userInput1')">
+                        </div>
+                        <div id="question1answer4">
+                            <label for="answerD">D: </label>
+                            <span name="answerD">Answer D Goes Here</span>
+                            <input name="userInput1" type="checkbox" onchange="tickHandler(this, 'userInput1')">
+                        </div>
+                        <div id="question1answer5" style="display:none;">
+                            <label for="answerE">E: </label>
+                            <span name="answerE">Answer E Goes Here</span>
+                            <input name="userInput1" type="checkbox" onchange="tickHandler(this, 'userInput1')">
+                        </div>
+                    </div>
+                </div><br>
+                    
+                <div name="question2" class="question">
+                    <label for="questionNum2">Question 2: </label>
+                    <span name="questionNum2" id="question2text">Question Text Here</p>
+                    <div id="answer2">
+                        <div id="question2answer1">
+                            <label for="answerA">A: </label>
+                            <span name="answerA">Answer A Goes Here</span>
+                            <input name="userInput2" type="checkbox"  onchange="tickHandler(this, 'userInput2')">
+                        </div>
+                        <div id="question2answer2">
+                            <label for="answerB">B: </label>
+                            <span name="answerB">Answer B Goes Here</span>
+                            <input name="userInput2" type="checkbox"  onchange="tickHandler(this, 'userInput2')">
+                        </div>
+                        <div id="question2answer3">
+                            <label for="answerA">C: </label>
+                            <span name="answerA">Answer C Goes Here</span>
+                            <input name="userInput2" type="checkbox"  onchange="tickHandler(this, 'userInput2')">
+                        </div>
+                        <div id="question2answer4">
+                            <label for="answerD">D: </label>
+                            <span name="answerD">Answer D Goes Here</span>
+                            <input name="userInput2" type="checkbox"  onchange="tickHandler(this, 'userInput2')">
+                        </div>
+                        <div id="question2answer5" style="display:none;">
+                            <label for="answerE">E: </label>
+                            <span name="answerE">Answer E Goes Here</span>
+                            <input name="userInput2" type="checkbox"  onchange="tickHandler(this, 'userInput2')">
+                        </div>
+                    </div>
+                </div><br>
+
+                <div name="question3" class="question">
+                    <label for="questionNum3">Question 3: </label>
+                    <span name="questionNum3" id="question5text">Question Text Here</p>
+                    <div id="answer3">
+                        <div id="question3answer1">
+                            <label for="answerA">A: </label>
+                            <span name="answerA">Answer A Goes Here</span>
+                            <input name="userInput3" type="checkbox"  onchange="tickHandler(this, 'userInput3')">
+                        </div>
+                        <div id="question3answer2">
+                            <label for="answerB">B: </label>
+                            <span name="answerB">Answer B Goes Here</span>
+                            <input name="userInput3" type="checkbox"  onchange="tickHandler(this, 'userInput3')">
+                        </div>
+                        <div id="question3answer3">
+                            <label for="answerA">C: </label>
+                            <span name="answerA">Answer C Goes Here</span>
+                            <input name="userInput3" type="checkbox"  onchange="tickHandler(this, 'userInput3')">
+                        </div>
+                        <div id="question3answer4">
+                            <label for="answerD">D: </label>
+                            <span name="answerD">Answer D Goes Here</span>
+                            <input name="userInput3" type="checkbox"  onchange="tickHandler(this, 'userInput3')">
+                        </div>
+                        <div id="question3answer5" style="display:none;">
+                            <label for="answerE">E: </label>
+                            <span name="answerE">Answer E Goes Here</span>
+                            <input name="userInput3" type="checkbox"  onchange="tickHandler(this, 'userInput3')">
+                        </div>
+                    </div>
+                </div><br>
+
+                <div name="question4" class="question">
+                    <label for="questionNum4">Question 4: </label>
+                    <span name="questionNum4" id="question5text">Question Text Here</p>
+                    <div id="answer4">
+                        <div id="question4answer1">
+                            <label for="answerA">A: </label>
+                            <span name="answerA">Answer A Goes Here</span>
+                            <input name="userInput4" type="checkbox"  onchange="tickHandler(this, 'userInput4')">
+                        </div>
+                        <div id="question4answer2">
+                            <label for="answerB">B: </label>
+                            <span name="answerB">Answer B Goes Here</span>
+                            <input name="userInput4" type="checkbox"  onchange="tickHandler(this, 'userInput4')">
+                        </div>
+                        <div id="question4answer3">
+                            <label for="answerA">C: </label>
+                            <span name="answerA">Answer C Goes Here</span>
+                            <input name="userInput4" type="checkbox"  onchange="tickHandler(this, 'userInput4')">
+                        </div>
+                        <div id="question4answer4">
+                            <label for="answerD">D: </label>
+                            <span name="answerD">Answer D Goes Here</span>
+                            <input name="userInput4" type="checkbox"  onchange="tickHandler(this, 'userInput4')">
+                        </div>
+                        <div id="question4answer5" style="display:none;">
+                            <label for="answerE">E: </label>
+                            <span name="answerE">Answer E Goes Here</span>
+                            <input name="userInput4" type="checkbox"  onchange="tickHandler(this, 'userInput4')">
+                        </div>
+                    </div>
+                </div><br>
+
+                <div name="question5" class="question">
+                    <label for="questionNum5">Question 5: </label>
+                    <span name="questionNum5" id="question5text">Question Text Here</p>
+                    <div id="answer5">
+                        <div id="question5answer1">
+                            <label for="answerA">A: </label>
+                            <span name="answerA">Answer A Goes Here</span>
+                            <input name="userInput5" type="checkbox"  onchange="tickHandler(this, 'userInput5')">
+                        </div>
+                        <div id="question5answer2">
+                            <label for="answerB">B: </label>
+                            <span name="answerB">Answer B Goes Here</span>
+                            <input name="userInput5" type="checkbox"  onchange="tickHandler(this, 'userInput5')">
+                        </div>
+                        <div id="question5answer3">
+                            <label for="answerA">C: </label>
+                            <span name="answerA">Answer C Goes Here</span>
+                            <input name="userInput5" type="checkbox"  onchange="tickHandler(this, 'userInput5')">
+                        </div>
+                        <div id="question5answer4">
+                            <label for="answerD">D: </label>
+                            <span name="answerD">Answer D Goes Here</span>
+                            <input name="userInput5" type="checkbox"  onchange="tickHandler(this, 'userInput5')">
+                        </div>
+                        <div id="question5answer5" style="display:none;">
+                            <label for="answerE">E: </label>
+                            <span name="answerE">Answer E Goes Here</span>
+                            <input name="userInput5" type="checkbox"  onchange="tickHandler(this, 'userInput5')">
+                        </div>
+                    </div>
+                </div><br>
+            </div>
+
+        </main>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/assignments.js"></script>
+    </body>
+</html>
