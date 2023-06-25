@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // courseID tells you whether the page is for course 1 2 3 or 4
 let courseID = document.head.querySelector("meta[content]").getAttribute("content");
 
@@ -55,3 +56,15 @@ function populateQuestionTable(questionList) {
         }
     }
 } // End of populateQuestionTable
+=======
+// function displayQuestions() {
+//     var database = firebase.database();
+
+//     database.ref("data").on("value", function(snapshot) {
+//         var data = snapshot.val();
+//         console.log(data);  // Print the retrieved data
+//     });
+// }
+
+// window.onload = displayQuestions();
+>>>>>>> 83ae010e8b7b3ec2f3e0198c277103c429487ed7
