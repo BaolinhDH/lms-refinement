@@ -80,28 +80,67 @@
                 <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
                 <h2><a href="home.html">Home</a></h2>
                 <h2><a href="modules.html">Modules</a></h2>
-                <h2><a class="activeLink" href="assignments.html">Assignments</a></h2>
+                <h2><a class="activeLink" href="assignments_home.html">Assignments</a></h2>
                 <h2><a href="discussions.html">Discussions</a></h2>
                 <h2><a href="bigbluebutton.html">Online Lectures (Big Blue Button)</a></h2>
                 <!-- <h2><a href="home.html">Course Info</a></h2> -->
-                <h2><a class="lecturer" href="exambank.html">Exam Bank</a></h2>
+                <h2><a class="lecturer" href="exambank_home.html">Exam Bank</a></h2>
             </aside>
         </header>
 
         <main>
             <h1>UI/UX Design Assignments</h1>
-            <form class="assignmentNav">
+            <!-- <form class="assignmentNav">
                 <input class="dummy" type="input" placeholder="Search for assignment">
                 <button class="dummy">Show by Date</button>
                 <button class="dummy">Show by Type</button>
             </form>
-            <hr>
-            <table class="assignmentTable"> <!-- The contents of the assignment table will need to be populated using javascript, because this data is stored in json files!! -->
-
+            <hr> -->
+            <!-- The contents of the assignment table will need to be populated using javascript, because this data is stored in json files!! -->
+            <table class="assignmentTable">
+                <tr>
+                    <th></th>
+                    <th>Exams</th>
+                    <th>Due Date</th>
+                    <th>Grade</th>
+                </tr>
+                <tr name="examPlaceholder" id="assignment1" value="empty">
+                    <td>1</td>
+                    <td class="examName" id="exam1name"><a href="assignments_takeexam.html">---</a></td>
+                    <td class="dueDate" id="exam1dueDate">---</td>
+                    <td class="grade" id="exam1grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment2" value="empty">
+                    <td>2</td>
+                    <td class="examName" id="exam2name"><a href="assignments_takeexam.html">---</a></td>
+                    <td class="dueDate" id="exam2dueDate">---</td>
+                    <td class="grade" id="exam2grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment3" value="empty">
+                    <td>3</td>
+                    <td class="examName" id="exam3name"><a href="assignments_takeexam.html">---</a></td>
+                    <td class="dueDate" id="exam3dueDate">---</td>
+                    <td class="grade" id="exam3grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment4" value="empty">
+                    <td>4</td>
+                    <td class="examName" id="exam4name"><a href="assignments_takeexam.html">---</a></td>
+                    <td class="dueDate" id="exam4dueDate">---</td>
+                    <td class="grade" id="exam4grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment5" value="empty">
+                    <td>5</td>
+                    <td class="examName" id="exam5name"><a href="assignments_takeexam.html">---</a></td>
+                    <td class="dueDate" id="exam5dueDate">---</td>
+                    <td class="grade" id="exam5grade">---</td>
+                </tr>
             </table>
         </main>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
         <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/firebase.js"></script>
         <script src="../../scripts/hide_exam.js"></script>
-        <script src="../../scripts/exambank.js"></script>
+        <script src="../../scripts/assignments_home.js"></script>
     </body>
 </html>

@@ -74,16 +74,16 @@
 
         <header> <!-- Header.  -->
             <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
-            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> <a href="exambank">Exam Bank</a> <span style="color: grey">></span> <a href="javascript:history.back()">Create Exam</a> <span style="color: grey">></span>  Finalize Exam</h2></span>
+            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> <a href="exambank_home.html">Exam Bank</a> <span style="color: grey">></span> <a href="javascript:history.back()">Create Exam</a> <span style="color: grey">></span>  Finalize Exam</h2></span>
 
             <aside> <!-- Secondary navigation. Contains in-course navigation -->
                 <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
                 <h2><a href="home.html">Home</a></h2>
                 <h2><a href="modules.html">Modules</a></h2>
-                <h2><a href="assignments.html">Assignments</a></h2>
+                <h2><a href="assignments_home.html">Assignments</a></h2>
                 <h2><a href="discussions.html">Discussions</a></h2>
                 <h2><a href="bigbluebutton.html">Online Lectures (Big Blue Button)</a></h2>
-                <h2><a class="lecturer activeLink" href="exambank.html">Exam Bank</a></h2>
+                <h2><a class="lecturer activeLink" href="exambank_home.html">Exam Bank</a></h2>
             </aside>
         </header>
 
@@ -93,14 +93,16 @@
 
             </div>
             <div>
-                <form action="assignments.html" method="POST">
+                <form action="assignments_home.html" method="POST">
                     <button id="addMoreQuestions">Add More Questions</button><br>
                     <button id="randomizeOrder">Randomize Question Order</button><br>
                     <input type="submit" value="Add Exam to Assignments">
                 </form>
             </div>
         </main>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
         <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
-        <script src="../../scripts/exambank.js"></script>
+        <script src="../../scripts/createExam.js"></script>
     </body>
 </html>
