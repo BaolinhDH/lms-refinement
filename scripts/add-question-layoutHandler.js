@@ -1,6 +1,11 @@
 let currentOption;
 let currentNumOfCorrectAnswers;
 
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.classList.toggle("show");
+}
+
 // Hides all answer boxes
 function addQuestionHideList() {
     document.getElementById("answer1").style.display = "none";
@@ -22,12 +27,6 @@ function addQuestionDisplayList() {
 // Reset all checkboxes when changing from Multiple Choice (4) to Multiple Answers (5) and vice versa
 function resetAnswers() {
     var answerList = document.querySelector('.answer_list'); // Get the answer_list div
-
-    // Clear radio buttons
-    var radioButtons = answerList.querySelectorAll('input[type="radio"]');
-    radioButtons.forEach(function(radioButton) {
-        radioButton.checked = false;
-    });
 
     // Clear checkboxes
     var checkboxes = answerList.querySelectorAll('input[type="checkbox"]');

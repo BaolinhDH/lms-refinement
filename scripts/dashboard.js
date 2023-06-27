@@ -38,5 +38,10 @@ function resetSearch() {
     }
 }
 
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.classList.toggle("show");
+}
+
 document.getElementById("resetBtn").onclick = function() {resetSearch()};
 document.getElementById("searchInput").onkeyup = function() {searchCard()};

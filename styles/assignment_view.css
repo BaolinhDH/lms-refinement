@@ -1,0 +1,50 @@
+#sideMenu {
+    margin-left: 100px;
+}
+
+.assignment-details {
+    width: 60%;
+}
+
+.assignment-actions {
+    width: 40%;
+    text-align: right;
+}
+
+#assignmentName {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+
+#assignmentBrief {
+    margin-bottom: 20px;
+}
+
+#submissionEmbed {
+    font-style: italic;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0080FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0058B3;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 20px;
+}

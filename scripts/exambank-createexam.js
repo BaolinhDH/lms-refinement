@@ -3,22 +3,12 @@ let courseID = document.head.querySelector("meta[content]").getAttribute("conten
 
 var database = firebase.database();
 
-// Read the database and display them on the home page of exam bank
-database.ref("question").once("value")
-.then(function(snapshot) {
-    questionArray = []; // Array to store the data
-    snapshot.forEach(function(childSnapshot) {
-        // Get the data for a question and stores it
-        var childData = childSnapshot.val();
-        questionArray.push(childData);
-    });
-    let temp = questionArray; // temp array to be modified
-    populateQuestionTable(temp); // Displays all questions
-})
-.catch(function(error) {
-    console.error("Error retrieving data:", error);
-});
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.classList.toggle("show");
+}
 
+// Read the database
 function readJson() {
     return new Promise(function(resolve, reject) {
         database.ref("question").once("value")
@@ -37,6 +27,12 @@ function readJson() {
     });
 }
 
+// Displays questions on the exam bank
+readJson().then(function(data) {
+    let temp = data;
+    populateQuestionTable(temp);
+})
+
 // Takes in an array of questions and display them
 function populateQuestionTable(questionList) {
     // Get all elements used to display questions
@@ -48,27 +44,30 @@ function populateQuestionTable(questionList) {
             // If there are questions in the provided array, display it
             if(questionList.length != 0) {
                 let question = questionList[0];
-                if(question['topic'] == "ux") {
-                    placeholders[i].getElementsByClassName("topic")[0].innerHTML = "User Experience";
+                
+                if(question['courseID'] == String(courseID)) {
+                    if(question['topic'] == "ux") {
+                        placeholders[i].getElementsByClassName("topic")[0].innerHTML = "User Experience";
+                    }
+                    else if(question['topic'] == "aesthetic") {
+                        placeholders[i].getElementsByClassName("topic")[0].innerHTML = "Aesthetic";
+                    }
+    
+                    if(question['type'] == "multipleChoice") {
+                        placeholders[i].getElementsByClassName("type")[0].innerHTML = "Multiple Choice";
+                    }
+                    else if(question['type'] == "multipleAnswers") {
+                        placeholders[i].getElementsByClassName("type")[0].innerHTML = "Multiple Answers";
+                    }
+    
+                    placeholders[i].getElementsByClassName("date")[0].innerHTML = question['date'];
+                    placeholders[i].getElementsByClassName("questionText")[0].innerHTML = question['question'];
+    
+                    // After displaying, change the attribute of the div to filled
+                    placeholders[i].setAttribute("value", "filled");
+                    // Lastly, remove that question from the provided array
+                    questionList.splice(0, 1);
                 }
-                else if(question['topic'] == "aesthetic") {
-                    placeholders[i].getElementsByClassName("topic")[0].innerHTML = "Aesthetic";
-                }
-
-                if(question['type'] == "multipleChoice") {
-                    placeholders[i].getElementsByClassName("type")[0].innerHTML = "Multiple Choice";
-                }
-                else if(question['type'] == "multipleAnswers") {
-                    placeholders[i].getElementsByClassName("type")[0].innerHTML = "Multiple Answers";
-                }
-
-                placeholders[i].getElementsByClassName("date")[0].innerHTML = question['date'];
-                placeholders[i].getElementsByClassName("questionText")[0].innerHTML = question['question'];
-
-                // After displaying, change the attribute of the div to filled
-                placeholders[i].setAttribute("value", "filled");
-                // Lastly, remove that question from the provided array
-                questionList.splice(0, 1);
             }
         }
     }
@@ -188,7 +187,7 @@ function sendQuestion(jsonData) {
         // Confirmation message
         console.log("Data stored successfully!");
         // Redirects to assignment's homepage
-        window.location.href = "assignments_home.html";
+        window.location.href = "assignments-home.html";
     })
     // Error handling
     .catch(function(error) {
@@ -196,14 +195,26 @@ function sendQuestion(jsonData) {
     });
 }
 
-function createExam() {
+// function createExam() {
+//     readJson().then(function(data) {
+//         let rowsTicked = dataHandler();
+//         let jsonExam = createJson(rowsTicked, data);
+//         sendQuestion(jsonExam);
+//         console.log(jsonExam); // The populated questionArray
+//     })
+// }
+
+function createExam(event) {
     readJson().then(function(data) {
-        let rowsTicked = dataHandler();
-        let jsonExam = createJson(rowsTicked, data);
-        sendQuestion(jsonExam);
-        console.log(jsonExam); // The populated questionArray
+        if(createRequirementCheck(event) == true) {
+            let rowsTicked = dataHandler();
+            let jsonExam = createJson(rowsTicked, data);
+            // sendQuestion(jsonExam);
+            console.log(jsonExam); // The populated questionArray
+            alert("check completed");
+        }
     })
 }
 
 let createExamBtn = document.getElementById("createExamBtn");
-createExamBtn.onclick = function() {createExam()};
+createExamBtn.onclick = function() {createExam(event)};

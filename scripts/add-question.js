@@ -93,7 +93,7 @@ function sendQuestion(jsonData) {
         // Confirmation message
         console.log("Data stored successfully!");
         // Redirects back to exambank's homepage
-        window.location.href = "exambank_home.html";
+        window.location.href = "exambank-home.html";
     })
     // Error handling
     .catch(function(error) {

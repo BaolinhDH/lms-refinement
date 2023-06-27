@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--  
+    exambank-addquestion.html
+    Exam Bank Question Creation html page
+-->
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../styles/site.css" />
+        <link rel="stylesheet" href="../../styles/exambank_addquestion.css" />
+        <meta name="courseID" content="3"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages -->
+        <title>Intergrated Applications - Delete Question</title>
+    </head>
+
+    <body>
+        <nav>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <a href="../index.html">
+                    <div class="navButton">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="label">Log Out</span>
+                    </div>
+                </a>            
+
+                <a href="../dashboard.html">
+                    <div class="navButton">
+                        <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
+                        <span class="label">Dashboard</span>
+                    </div>
+                </a>               
+        
+                <!-- Dropdown Sidebar -->
+                
+                <a>
+                <div class="navButton" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="label">Courses</span>
+                </div>
+                </a>
+
+                <div class="navDropDownContent" id="dropdownContent">                  
+                    <hr>
+                    <div>
+                        <h4 id="courseDropDownSemester1">2024 Winter Semester</h4>
+                        <a href="../course1/home.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
+                        
+                    </div>
+                    <div>
+                        <h4 id="courseDropDownSemester2">2024 Fall Semester</h4>
+                        <a href="../course2/home.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
+                        
+                    </div>
+                    <div>
+                        <a href="home.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
+                        
+                    </div>
+                    <div>
+                        <a href="../course4/home.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
+                        
+                    </div>
+                </div>
+                <!-- End of Dropdown Sidebar -->                
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- right content -->
+            <div class="right-content">
+                <a><div class="navButton dummy">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="label">Calendar</span>
+                </div></a>
+
+                <a><div class="navButton dummy">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span class="label">Student Resources</span>
+                </div></a>
+            </div>
+        </nav>
+
+        <header id="sideMenu"> <!-- Header.  -->
+            <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
+            <span><h2><a href="modules.html">Intergrated Applications</a> <span style="color: grey">></span> <a href="exambank"> Exam Bank</a> <span style="color: grey">></span> Edit Question</h2></span>
+
+            <aside> <!-- Secondary navigation. Contains in-course navigation -->
+                <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
+                <h2><a href="home.html">Home</a></h2>
+                <h2><a href="modules.html">Modules</a></h2>
+                <h2><a href="assignments-home.html">Assignments</a></h2>
+                <h2><a href="discussions.html">Discussions</a></h2>
+                <h2><a href="bigbluebutton.html">Big Blue Button</a></h2>
+                <h2><a class="lecturer activeLink" href="exambank-home.html">Exam Bank</a></h2>
+            </aside>
+        </header>
+
+        <main>
+            <h1>Intergrated Applications - Delete Questions in Exam Bank</h1>
+
+            <div class="body">
+                <div class="questionSelector">
+                    <select class="selectQuestion">
+                        <option>-- Select a Question To Edit --</option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                        <option style="display:none;"></option>
+                    </select>
+                </div>
+    
+                <div class="questionBody">
+                    <!-- Start of question1 -->
+                    <div class="question" style="display:none;">
+                        <label for="chosenQuestion">Question: </label>
+                        <span class="questionText" name="chosenQuestion" id="chosenQuestionText"></span>
+
+                        <div class="answerList" id="answer1">
+                            <div class="answer" name="answer1" value="incorrect">
+                                <label for="answerA">A: </label>
+                                <span id="answerText" name="answerA"></span>
+                                <input for="answerA" name="userInput1" type="checkbox">
+                            </div>
+
+                            <div class="answer" name="answer2" value="incorrect">
+                                <label for="answerB">B: </label>
+                                <span name="answerB"></span>
+                                <input name="userInput1" type="checkbox">
+                            </div>
+
+                            <div class="answer" name="answer3" value="incorrect">
+                                <label for="answerC">C: </label>
+                                <span name="answerC"></span>
+                                <input name="userInput1" type="checkbox">
+                            </div>
+
+                            <div class="answer" name="answer4" value="incorrect">
+                                <label for="answerD">D: </label>
+                                <span name="answerD"></span>
+                                <input name="userInput1" type="checkbox">
+                            </div>
+
+                            <div class="answer" name="answer5" value="incorrect" style="display:none;">
+                                <label for="answerE">E: </label>
+                                <span name="answerE"></span>
+                                <input name="userInput1" type="checkbox">
+                            </div>
+                        </div> <!-- End of answerList -->                         
+                    </div> <!-- End of question1 -->
+                </div>
+
+                <button id="deleteQuestionBtn">Delete Question</button>
+            </div>
+
+        </main>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/firebase.js"></script>
+        <script src="../../scripts/exambank-deletequestion.js"></script>
+        <script src="../../scripts/hide-exam.js"></script>
+    </body>
+</html>

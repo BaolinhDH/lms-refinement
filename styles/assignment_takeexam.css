@@ -1,0 +1,51 @@
+#sideMenu {
+    margin-left: 100px;
+}
+
+.examBody {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question label {
+    font-weight: bold;
+    color: #333333;
+}
+
+.question span {
+    display: block;
+    margin-bottom: 10px;
+    color: #666666;
+}
+
+.answerOption {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.answerOption label {
+    margin-right: 5px;
+}
+
+#submitExam {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#submitExam:hover {
+    background-color: #45a049;
+}

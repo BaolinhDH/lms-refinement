@@ -1,41 +1,125 @@
-main {
-
+/* Add custom styles for the dashboard */
+/* Course card styles */
+#sideMenu {
+  margin-left: 100px;
 }
 
-/* Course and course card styling */
-.courseContainer {
-
-}
 .courseCard {
-
-}
-.cardHeader {
-
-}
-figure{
-
-}
-figure > img{
-
-}
-figcaption{
-
-}
-.cardBody {
-
-}
-.cardBody i{
-
-}
-.cardBody span{
-
-}
-.cardFooter {
-    
-}
-.cardFooter i{
-
-}
-.cardFooter span{
-    
-}
+    background-color: #fff;
+    outline: 1px solid #5f5f5f;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .courseCard h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .courseCard h2 a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .courseCard h2 a:hover {
+    color: #a5a5a5;
+  }
+  
+  .courseCard h2 + h2 {
+    font-size: 18px;
+    color: #3b3b3b;
+    margin-bottom: 10px;
+  }
+  
+  .cardHeader {
+      background-color: #4F70C9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .cardHeader img {
+      width: 80px;
+      border-radius: 5px;
+      height: auto;
+     
+      
+  }
+  
+  .cardHeader figcaption {
+    font-size: 14px;
+    color: #3b3b3b;
+  }
+  
+  .cardBody {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .cardBody a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .cardBody i {
+    margin-right: 10px;
+  }
+  
+  .cardBody p {
+    margin: 0;
+  }
+  
+  .cardFooter {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cardFooter a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .cardFooter i {
+    margin-bottom: 5px;
+  }
+  
+  .cardFooter p {
+    margin: 0;
+  }
+  
+  /* Search bar styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  #searchInput {
+    width: 90%;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #resetBtn {
+      height: 25px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #resetBtn:hover {
+    background-color: #0056b3;
+  }

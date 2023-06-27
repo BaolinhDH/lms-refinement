@@ -1,0 +1,53 @@
+#sideMenu {
+  margin-left: 100px;
+}
+
+.finalize-exam-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .finalize-exam-form {
+    text-align: center;
+  }
+  
+  .action-button {
+    width: 170px;
+    height: auto;
+    padding: 12px 24px;
+    margin-bottom: 10px;
+    background-color: #4287f5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button {
+      width: 170px;
+    height: auto;
+    padding: 12px 24px;
+    margin-bottom: 10px;
+    background-color: #4287f5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.4;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #1e4dd8;
+  }
+  
+  .submit-button:hover {
+    background-color: #1e4dd8;
+  }

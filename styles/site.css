@@ -1,77 +1,115 @@
-/*
-    site.css
-    Overall site-wide CSS. Should be linked in every page and contain general styling for every page.
-*/
-
-/* Elements */
 body {
-    background: white;
-}
-hr {
-
-}
-a {
-
-}
-a.activeLink{ /* For links that lead to the same page you are on */
-    color: black;
-}
-h1 {
-
-}
-h2 {
-
-}
-h3 {
-
-}
-h4 {
-
-}
-
-i {
-
-}
-
-header {
-    
-}
-
-aside {
-
+  font-family: Arial, sans-serif;
+  display: flex; /* Add Flexbox */
+            padding-right: 150px;
 }
 
 main {
-
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Navigation bar styling */
+h1 {
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Navigation styles */
 nav {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
 
-}
-nav .navButton{
-    
-}
-nav i{
-
-}
-nav a{
-
-}
-nav .label{
-
-}
-nav .navDropDown{
-
-}
-nav .navDropDownContent{
+.navButton {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 10px;
+  text-decoration: none;
 
 }
 
-/* Class used to distinguish dummy content */
-a.dummy{
-
+.label {
+  margin-left: 5px;
 }
-div.dummy{
 
+/* Sidebar styles */
+.sidebar {
+  width: 100px;
+  background-color: #4F70C9;
+  height: 100vh;
+  padding: 2px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.sidebar a:hover {
+  cursor: pointer;
+  color: #333;
+  background-color: #ddd;
+}
+
+.navDropDownContent {
+  display: none;
+}
+
+.navDropDownContent.show {
+  display: block;
+}
+
+/* Additional styles for moving elements to the right */
+.right-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-content div {
+  margin-top: 10px;
+}
+
+.right-content div:hover {
+  cursor: pointer;
+}
+
+/* in course pages */
+main {
+            
+  flex-grow: 1; /* Expand and fill the remaining space */
+  padding: 20px;
+  
+} 
+ 
+#shortcuts {
+  width: 200px;
+  padding-top: 20px;
+  padding-left: 130px;
+  padding-right: 20px;
+}
+
+#shortcuts h2 a{
+text-decoration: none;
+color: rgb(44, 44, 44);
+}
+
+#shortcuts h2 a:hover {
+  cursor: pointer;
+  color:rgb(22, 114, 184);
 }

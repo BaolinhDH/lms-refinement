@@ -5,11 +5,11 @@
 window.name = "";
 
 document.querySelector('#loginStudent').addEventListener('click', function() {
-    window.name = "Student";
+    window.name = "student";
     window.location.href = 'dashboard.html';
 });
 
 document.querySelector('#loginLecturer').addEventListener('click', function() {
-    window.name = "Lecturer";
+    window.name = "lecturer";
     window.location.href = 'dashboard.html';
 });
