@@ -27,8 +27,23 @@ select {
     margin-bottom: 10px;
 }
 
-.answer_list {
-    margin-top: 20px;
+.answerList{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+}
+.answerList > div{
+    display: block;
+}
+.answerList > div > label{
+    display: inline;
+}
+.answerList > div > span{
+    display: inline;
+}
+.answerList > div > input{
+    float: left;
+    display: inline;
 }
 
 .answer_list > div {
