@@ -68,63 +68,103 @@ function readJson() {
 
 // Populate the exam
 function populateExam(exam) {
-    if(exam['courseID'] == courseID) {
-        let questionContainer = document.getElementsByClassName("questionContainer")[0];
-        let questions = questionContainer.getElementsByClassName("question");
-        let databaseQuestions = exam['questions'];
+    console.log("populating");
+    let questionContainer = document.getElementsByClassName("questionContainer")[0];
+    let questions = questionContainer.getElementsByClassName("question");
+    let databaseQuestions = exam['questions'];
 
-        for(let i = 0; i < questions.length; i++) {
-            // Access question
-            let databaseQuestion = databaseQuestions[i];
+    console.log(databaseQuestions.length);
 
-            if(databaseQuestion == null) { break; }
+    for(let i = 0; i < questions.length; i++) {
+        // Access question
+        let databaseQuestion = databaseQuestions[i];
+        console.log(databaseQuestion);
+        console.log("before break");
 
-            let question = questions[i];
-            question.style.display = "";
+        if(databaseQuestion == null) { break; }
 
-            // Question Text
-            let databaseQuestionText = databaseQuestion['question'];
-            question.getElementsByClassName("questionText")[0].innerHTML = databaseQuestionText;
+        let question = questions[i];
+        console.log(question);
+        question.style.display = "";
 
-            // Answer List
-            let answerList = question.getElementsByClassName("answerList")[0];
-            let answers = answerList.getElementsByClassName("answer");
+        // Question Text
+        let databaseQuestionText = databaseQuestion['question'];
+        question.getElementsByClassName("questionText")[0].innerHTML = databaseQuestionText;
 
-            let databaseAnswerList = databaseQuestion['answers'];
+        // Answer List
+        let answerList = question.getElementsByClassName("answerList")[0];
+        let answers = answerList.getElementsByClassName("answer");
 
-            if(databaseAnswerList.length == 5) {
-                question.setAttribute("value", "multipleAnswers");
-            }
-            else if(databaseAnswerList.length == 4) {
-                question.setAttribute("value", "multipleChoice");
-            }
+        let databaseAnswerList = databaseQuestion['answers'];
 
+        if(databaseAnswerList.length == 5) {
+            question.setAttribute("value", "multipleAnswers");
+        }
+        else if(databaseAnswerList.length == 4) {
+            question.setAttribute("value", "multipleChoice");
+        }
+
+        // for(let j = 0; j < answers.length; j++) {
+        //     console.log(answers.length);
+        //     let answer = answers[j];
+        //     let databaseAnswer = databaseAnswerList[j];
+        //     console.log("still good");
+        //     if(databaseAnswerList.length == 5) {
+        //         answers[4].style.display = "";
+                
+        //         if(databaseAnswer['correct'] == "correct") {
+        //             answer.setAttribute("value", "correct");
+        //         }
+        //         let databaseAnswerText = databaseAnswer['text'];
+        //         answer.getElementsByTagName("span")[0].innerHTML = databaseAnswerText;
+
+        //         break;
+        //     }
+        //     else {
+        //         let databaseAnswerText
+        //         if(databaseAnswer['text'] != null) {
+        //             databaseAnswerText = databaseAnswer['text'];
+        //             answer.getElementsByTagName("span")[0].innerHTML = databaseAnswerText;
+        //             if(databaseAnswer['correct'] == "correct") {
+        //                 answer.setAttribute("value", "correct");
+        //             }
+        //         }
+        //     }
+        // }
+        if(databaseAnswerList.length == 5) {
             for(let j = 0; j < answers.length; j++) {
                 let answer = answers[j];
                 let databaseAnswer = databaseAnswerList[j];
-
-                if(databaseAnswerList.length == 5) {
-                    if(j == 4) {
-                        answer.style.display = "";
-                    }
-                }
-
+                answers[4].style.display = "";
+                    
                 if(databaseAnswer['correct'] == "correct") {
                     answer.setAttribute("value", "correct");
                 }
-
-                // Answer text
+                let databaseAnswerText = databaseAnswer['text'];
+                answer.getElementsByTagName("span")[0].innerHTML = databaseAnswerText;
+            }
+        }
+        else {
+            for(let j = 0; j < (answers.length - 1); j++) {
+                let answer = answers[j];
+                let databaseAnswer = databaseAnswerList[j];
+                    
+                if(databaseAnswer['correct'] == "correct") {
+                    answer.setAttribute("value", "correct");
+                }
                 let databaseAnswerText = databaseAnswer['text'];
                 answer.getElementsByTagName("span")[0].innerHTML = databaseAnswerText;
             }
         }
     }
+    console.log("end code outside");
 }
 
 // Retrieve the data from readJson then execute commands
 readJson().then(function(data) {
     // Note to self: data = examList
     let examList = data;
+    console.log(examList.length);
     
     for(let i = 0; i < examList.length; i++) {
         let exam = examList[i];

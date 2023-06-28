@@ -209,9 +209,9 @@ function createExam(event) {
         if(createRequirementCheck(event) == true) {
             let rowsTicked = dataHandler();
             let jsonExam = createJson(rowsTicked, data);
-            // sendQuestion(jsonExam);
+            sendQuestion(jsonExam);
             console.log(jsonExam); // The populated questionArray
-            alert("check completed");
+            // alert("check completed");
         }
     })
 }
