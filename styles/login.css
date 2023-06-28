@@ -27,12 +27,15 @@ body {
 }
 
 .loginForm button {
-    margin-top: 10px;
+    margin: 10px;
     padding: 12px 20px;
     font-size: 18px;
     border-radius: 5px;
+    border: #0e2aa6 solid;
+
+    transition: 0.2s;
 }
 
 .loginForm button:hover {
-    background-color: aquamarine;
+    background-color: #45BBE3;
 }
