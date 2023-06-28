@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--  
+    exambank.html
+    Exam Bank home html page
+-->
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../styles/site.css" />
+        <link rel="stylesheet" href="../../styles/exambank_home.css" />
+        <meta name="courseID" content="1"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages -->
+        <title>UI/UX Design Exam Bank</title>
+    </head>
+
+    <body>
+        <nav>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <a href="../../index.html">
+                    <div class="navButton">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="label">Log Out</span>
+                    </div>
+                </a>            
+
+                <a href="../dashboard.html">
+                    <div class="navButton">
+                        <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
+                        <span class="label">Dashboard</span>
+                    </div>
+                </a>               
+        
+                <!-- Dropdown Sidebar -->
+                
+                <a>
+                <div class="navButton" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="label">Courses</span>
+                </div>
+                </a>
+
+                <div class="navDropDownContent" id="dropdownContent">                  
+                    <hr>
+                    <div>
+                        <h4 id="courseDropDownSemester1">2024 Winter Semester</h4>
+                        <a href="home.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
+                        
+                    </div>
+                    <div>
+                        <h4 id="courseDropDownSemester2">2024 Fall Semester</h4>
+                        <a href="../course2/home.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
+                        
+                    </div>
+                    <div>
+                        <a href="../course3/home.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
+                        
+                    </div>
+                    <div>
+                        <a href="../course4/home.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
+                        
+                    </div>
+                </div>
+                <!-- End of Dropdown Sidebar -->                
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- right content -->
+            <div class="right-content">
+                <a><div class="navButton dummy">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="label">Calendar</span>
+                </div></a>
+
+                <a><div class="navButton dummy">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span class="label">Student Resources</span>
+                </div></a>
+            </div>
+        </nav>
+
+        <header id="sideMenu"> <!-- Header.  -->
+            <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
+            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> Exam Bank</h2></span>
+
+            <aside> <!-- Secondary navigation. Contains in-course navigation -->
+                <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
+                <h2><a href="home.html">Home</a></h2>
+                <h2><a href="modules.html">Modules</a></h2>
+                <h2><a href="assignments-home.html">Assignments</a></h2>
+                <h2><a href="discussions.html">Discussions</a></h2>
+                <h2><a href="bigbluebutton.html">Big Blue Button</a></h2>
+                <!-- <h2><a href="home.html">Course Info</a></h2> -->
+                <h2><a class="lecturer activeLink" href="exambank-home.html">Exam Bank</a></h2>
+            </aside>
+        </header>
+
+        <main>
+            <h1>UI/UX Design Exam Bank</h1>
+            <p id="test"></p>
+            <!-- All questions available go here -->
+            <div class="bankTableContainer">
+                <table id="bankTable">
+                    <!-- Header -->
+                    <tr id="header">
+                        <th>Topic</th>
+                        <th>Question</th>
+                        <th>Type</th>
+                        <th>Date Created</th>
+                    </tr>
+                    <!-- Question 1 -->
+                    <tr name="questionPlaceholder" id="question1" value="empty">
+                        <td class="topic" id="topic1">---</td>
+                        <td class="questionText" id="question1text">---</td>
+                        <td class="type" id="type1">---</td>
+                        <td class="date" id="date1">---</td>
+                    </tr>
+                    <!-- Question 2 -->
+                    <tr name="questionPlaceholder" id="question2" value="empty">
+                        <td class="topic" id="topic2">---</td>
+                        <td class="questionText" id="question2text">---</td>
+                        <td class="type" id="type2">---</td>
+                        <td class="date" id="date2">---</td>
+                    </tr>
+                    <!-- Question 3 -->
+                    <tr name="questionPlaceholder" id="question3" value="empty">
+                        <td class="topic" id="topic3">---</td>
+                        <td class="questionText" id="question3text">---</td>
+                        <td class="type" id="type3">---</td>
+                        <td class="date" id="date3">---</td>
+                    </tr>
+                    <!-- Question 4 -->
+                    <tr name="questionPlaceholder" id="question4" value="empty">
+                        <td class="topic" id="topic4">---</td>
+                        <td class="questionText" id="question4text">---</td>
+                        <td class="type" id="type4">---</td>
+                        <td class="date" id="date4">---</td>
+                    </tr>
+                    <!-- Question 5 -->
+                    <tr name="questionPlaceholder" id="question5" value="empty">
+                        <td class="topic" id="topic5">---</td>
+                        <td class="questionText" id="question5text">---</td>
+                        <td class="type" id="type5">---</td>
+                        <td class="date" id="date5">---</td>
+                    </tr>
+                    <!-- Question 6 -->
+                    <tr name="questionPlaceholder" id="question6" value="empty">
+                        <td class="topic" id="topic6">---</td>
+                        <td class="questionText" id="question6text">---</td>
+                        <td class="type" id="type6">---</td>
+                        <td class="date" id="date6">---</td>
+                    </tr>
+                    <!-- Question 7 -->
+                    <tr name="questionPlaceholder" id="question7" value="empty">
+                        <td class="topic" id="topic7">---</td>
+                        <td class="questionText" id="question7text">---</td>
+                        <td class="type" id="type7">---</td>
+                        <td class="date" id="date7">---</td>
+                    </tr>
+                    <!-- Question 8 -->
+                    <tr name="questionPlaceholder" id="question8" value="empty">
+                        <td class="topic" id="topic8">---</td>
+                        <td class="questionText" id="question8text">---</td>
+                        <td class="type" id="type8">---</td>
+                        <td class="date" id="date8">---</td>
+                    </tr>
+                    <!-- Question 9 -->
+                    <tr name="questionPlaceholder" id="question9" value="empty">
+                        <td class="topic" id="topic9">---</td>
+                        <td class="questionText" id="question9text">---</td>
+                        <td class="type" id="type9">---</td>
+                        <td class="date" id="date9">---</td>
+                    </tr>
+                    <!-- Question 10 -->
+                    <tr name="questionPlaceholder" id="question10" value="empty">
+                        <td class="topic" id="topic10">---</td>
+                        <td class="questionText" id="question10text">---</td>
+                        <td class="type" id="type10">---</td>
+                        <td class="date" id="date10">---</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- All questions available go here -->
+
+            <div class="buttonMenu">
+                <a href="exambank-createexam.html"><button>Create Exam</button></a>
+                <a href="exambank-addquestion.html"><button>Add Questions</button></a>
+                <a href="exambank-editquestion.html"><button>Edit Questions</button></a>
+                <a href="exambank-deletequestion.html"><button>Delete Questions</button></a>
+                <a href="exambank-exportquestion.html"><button>Export Questions</button></a>
+                <button onclick="importQuestion()">Import Questions</button>
+                <input type="file" id="importBtn" style="display:none;" accept=".json">
+            </div>
+        </main>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/firebase.js"></script>
+        <script src="../../scripts/exambank-home.js"></script>
+        <script src="../../scripts/hide-exam.js"></script>
+    </body>
+</html>

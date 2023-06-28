@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--  
+    assignments.html
+    Assignments html page
+-->
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../styles/site.css" />
+        <link rel="stylesheet" href="../../styles/assignment_home.css" />
+        <meta name="courseID" content="4"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages (and assignments) -->
+        <title>Design Production Assignments</title>
+    </head>
+
+    <body>
+        <nav>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <a href="../../index.html">
+                    <div class="navButton">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="label">Log Out</span>
+                    </div>
+                </a>            
+
+                <a href="../dashboard.html">
+                    <div class="navButton">
+                        <i class="fa-solid fa-house"></i> <!-- Placeholder for Logo -->
+                        <span class="label">Dashboard</span>
+                    </div>
+                </a>               
+        
+                <!-- Dropdown Sidebar -->
+                
+                <a>
+                <div class="navButton" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="label">Courses</span>
+                </div>
+                </a>
+
+                <div class="navDropDownContent" id="dropdownContent">                  
+                    <hr>
+                    <div>
+                        <h4 id="courseDropDownSemester1">2024 Winter Semester</h4>
+                        <a href="../course1/home.html"><span id="courseDropDown1">2110SUGD - UI/UX Design</span></a>
+                        
+                    </div>
+                    <div>
+                        <h4 id="courseDropDownSemester2">2024 Fall Semester</h4>
+                        <a href="../course2/home.html"><span id="courseDropDown2">2110SUGD - Visual Art</span></a>
+                        
+                    </div>
+                    <div>
+                        <a href="../course3/home.html"><span id="courseDropDown3">2110SUGD - Integrated Applications</span></a>
+                        
+                    </div>
+                    <div>
+                        <a href="home.html"><span id="courseDropDown4">2110SUGD - Design Production</span></a>
+                        
+                    </div>
+                </div>
+                <!-- End of Dropdown Sidebar -->                
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- right content -->
+            <div class="right-content">
+                <a><div class="navButton dummy">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="label">Calendar</span>
+                </div></a>
+
+                <a><div class="navButton dummy">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span class="label">Student Resources</span>
+                </div></a>
+            </div>
+        </nav>
+
+        <header id="sideMenu"> <!-- Header.  -->
+            <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
+            <span><h2><a href="modules.html">Design Production</a> <span style="color: grey">></span> Assignments</h2></span>
+
+            <aside> <!-- Secondary navigation. Contains in-course navigation -->
+                <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
+                <h2><a href="home.html">Home</a></h2>
+                <h2><a href="modules.html">Modules</a></h2>
+                <h2><a class="activeLink" href="assignments-home.html">Assignments</a></h2>
+                <h2><a href="discussions.html">Discussions</a></h2>
+                <h2><a href="bigbluebutton.html">Big Blue Button</a></h2>
+                <!-- <h2><a href="home.html">Course Info</a></h2> -->
+                <h2><a class="lecturer" href="exambank-home.html">Exam Bank</a></h2>
+            </aside>
+        </header>
+
+        <main>
+            <h1>Design Production Assignments</h1>
+            <!-- <form class="assignmentNav">
+                <input class="dummy" type="input" placeholder="Search for assignment">
+                <button class="dummy">Show by Date</button>
+                <button class="dummy">Show by Type</button>
+            </form>
+            <hr> -->
+            <!-- The contents of the assignment table will need to be populated using javascript, because this data is stored in json files!! -->
+            <table class="assignmentTable">
+                <tr>
+                    <th></th>
+                    <th>Exams</th>
+                    <th>Due Date</th>
+                    <th>Grade</th>
+                </tr>
+                <tr name="examPlaceholder" id="assignment1" value="empty">
+                    <td>1</td>
+                    <td class="examName" id="exam1name">
+                        <a class="takeExam" id="takeExam1" href="assignments-takeexam.html">
+                            <span class="takeExam" onclick="storeUniversalVariable(this)">---</span>
+                        </a>
+                    </td>
+                    <td class="dueDate" id="exam1dueDate">---</td>
+                    <td class="grade" id="exam1grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment2" value="empty">
+                    <td>2</td>
+                    <td class="examName" id="exam2name">
+                        <span class="takeExam" onclick="storeUniversalVariable(this)">---</span>
+                    </td>
+                    <td class="dueDate" id="exam2dueDate">---</td>
+                    <td class="grade" id="exam2grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment3" value="empty">
+                    <td>3</td>
+                    <td class="examName" id="exam3name">
+                        <span class="takeExam" onclick="storeUniversalVariable(this)">---</span>
+                    </td>
+                    <td class="dueDate" id="exam3dueDate">---</td>
+                    <td class="grade" id="exam3grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment4" value="empty">
+                    <td>4</td>
+                    <td class="examName" id="exam4name">
+                        <span class="takeExam" onclick="storeUniversalVariable(this)">---</span>
+                    </td>
+                    <td class="dueDate" id="exam4dueDate">---</td>
+                    <td class="grade" id="exam4grade">---</td>
+                </tr>
+                <tr name="examPlaceholder" id="assignment5" value="empty">
+                    <td>5</td>
+                    <td class="examName" id="exam5name">
+                        <span class="takeExam" onclick="storeUniversalVariable(this)">---</span>
+                    </td>
+                    <td class="dueDate" id="exam5dueDate">---</td>
+                    <td class="grade" id="exam5grade">---</td>
+                </tr>
+            </table>
+        </main>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
+        <script src="../../scripts/firebase.js"></script>
+        <script src="../../scripts/hide-exam.js"></script>
+        <script src="../../scripts/assignments-home.js"></script>
+    </body>
+</html>
