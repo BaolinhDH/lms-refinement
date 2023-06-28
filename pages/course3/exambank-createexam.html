@@ -7,7 +7,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="../../styles/site.css" />
-        <link rel="stylesheet" href="../../styles/exambank_home.css" />
+        <link rel="stylesheet" href="../../styles/exambank_createexam.css" />
         <meta name="courseID" content="3"> <!-- meta element denotes courseID to corelate course in scripts to specific json file. Present only on exam bank pages -->
         <title>Intergrated Applications Exam Bank</title>
     </head>
@@ -80,7 +80,8 @@
 
         <header id="sideMenu"> <!-- Header.  -->
             <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
-            <span><h2><a href="modules.html">Intergrated Applications</a> <span style="color: grey">></span> Exam Bank</h2></span>
+            <!-- <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> Exam Bank</h2></span> -->
+            <span><h2><a href="modules.html">Intergrated Applications</a> <span style="color: grey">></span> <a href="exambank-home.html"> Exam Bank</a><br> <span style="color: grey">></span> Create Exam</h2></span>
 
             <aside> <!-- Secondary navigation. Contains in-course navigation -->
                 <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
@@ -102,6 +103,7 @@
                 <table id="bankTable">
                     <!-- Header -->
                     <tr id="header">
+                        <th>Select</th>
                         <th>Topic</th>
                         <th>Question</th>
                         <th>Type</th>
@@ -109,6 +111,7 @@
                     </tr>
                     <!-- Question 1 -->
                     <tr name="questionPlaceholder" id="question1" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic1">---</td>
                         <td class="questionText" id="question1text">---</td>
                         <td class="type" id="type1">---</td>
@@ -116,6 +119,7 @@
                     </tr>
                     <!-- Question 2 -->
                     <tr name="questionPlaceholder" id="question2" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic2">---</td>
                         <td class="questionText" id="question2text">---</td>
                         <td class="type" id="type2">---</td>
@@ -123,6 +127,7 @@
                     </tr>
                     <!-- Question 3 -->
                     <tr name="questionPlaceholder" id="question3" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic3">---</td>
                         <td class="questionText" id="question3text">---</td>
                         <td class="type" id="type3">---</td>
@@ -130,6 +135,7 @@
                     </tr>
                     <!-- Question 4 -->
                     <tr name="questionPlaceholder" id="question4" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic4">---</td>
                         <td class="questionText" id="question4text">---</td>
                         <td class="type" id="type4">---</td>
@@ -137,6 +143,7 @@
                     </tr>
                     <!-- Question 5 -->
                     <tr name="questionPlaceholder" id="question5" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic5">---</td>
                         <td class="questionText" id="question5text">---</td>
                         <td class="type" id="type5">---</td>
@@ -144,6 +151,7 @@
                     </tr>
                     <!-- Question 6 -->
                     <tr name="questionPlaceholder" id="question6" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic6">---</td>
                         <td class="questionText" id="question6text">---</td>
                         <td class="type" id="type6">---</td>
@@ -151,6 +159,7 @@
                     </tr>
                     <!-- Question 7 -->
                     <tr name="questionPlaceholder" id="question7" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic7">---</td>
                         <td class="questionText" id="question7text">---</td>
                         <td class="type" id="type7">---</td>
@@ -158,6 +167,7 @@
                     </tr>
                     <!-- Question 8 -->
                     <tr name="questionPlaceholder" id="question8" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic8">---</td>
                         <td class="questionText" id="question8text">---</td>
                         <td class="type" id="type8">---</td>
@@ -165,6 +175,7 @@
                     </tr>
                     <!-- Question 9 -->
                     <tr name="questionPlaceholder" id="question9" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic9">---</td>
                         <td class="questionText" id="question9text">---</td>
                         <td class="type" id="type9">---</td>
@@ -172,6 +183,7 @@
                     </tr>
                     <!-- Question 10 -->
                     <tr name="questionPlaceholder" id="question10" value="empty">
+                        <td><input type="checkbox" name="select-checkbox"></td>
                         <td class="topic" id="topic10">---</td>
                         <td class="questionText" id="question10text">---</td>
                         <td class="type" id="type10">---</td>
@@ -181,21 +193,33 @@
             </div>
             <!-- All questions available go here -->
 
-            <div class="buttonMenu">
-                <a href="exambank-createexam.html"><button>Create Exam</button></a>
-                <a href="exambank-addquestion.html"><button>Add Questions</button></a>
-                <a href="exambank-editquestion.html"><button>Edit Questions</button></a>
-                <a href="exambank-deletequestion.html"><button>Delete Questions</button></a>
-                <a href="exambank-exportquestion.html"><button>Export Questions</button></a>
-                <button onclick="importQuestion()">Import Questions</button>
-                <input type="file" id="importBtn" style="display:none;">
+            <!-- <form action="exambank-finalizeexam.html" method="POST">
+                <label for="examName">Exam Name: </label>
+                <input id="examName" type="text" placeholder="Enter Exam Name"><br>
+                <label for="examDueDate">Due Date: </label>
+                <input id="examDueDate" type="text" placeholder="YYYY-MM-DD"><br>
+                <label for="examDueTime">Due Time: </label>
+                <input id="examDueTime" type="text" placeholder="HH:MM"><br>
+                <input type="submit" value="Next">
+            </form> -->
+            <div>
+                <label for="examName">Exam Name:
+                    <input id="examName" type="text" placeholder="Enter Exam Name"><br>
+                </label>
+                <label for="examDueDate">Due Date: 
+                    <input id="examDueDate" type="text" placeholder="YYYY-MM-DD"><br>
+                </label>
+                <label for="examDueTime">Due Time: 
+                    <input id="examDueTime" type="text" placeholder="HH:MM"><br>
+                </label>
+                <button id="createExamBtn">Create Exam</button>
             </div>
         </main>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
         <script src="https://kit.fontawesome.com/eda879d839.js" crossorigin="anonymous"></script>
         <script src="../../scripts/firebase.js"></script>
-        <script src="../../scripts/exambank-home.js"></script>
+        <script src="../../scripts/exambank_createexam.js"></script>
         <script src="../../scripts/hide-exam.js"></script>
     </body>
 </html>

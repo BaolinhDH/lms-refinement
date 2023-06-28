@@ -52,7 +52,7 @@ function populateOptions(databaseQuestionList) {
 
 function populateQuestionBody(databaseQuestionList) {
     resetAnswers();
-    if(optionsList.value != "-- Select a Question To Edit --") {
+    if(optionsList.value != "-- Select a Question To Export --") {
         let answer5 = document.getElementsByName("answer5")[0];
         let currentOption = optionsList.value;
 
@@ -111,44 +111,35 @@ function tickHandler(checkbox) {
     }
 }
 
-function deleteQuestion() {
-    // Specify the path to the collection of exams
-    const questionPath = '/question'; // Replace with the actual path in your database
-    let newQuestionPath;
-    let questionText = document.getElementsByClassName("questionText")[0].innerHTML;
+function exportQuestion(databaseQuestionList) {
+    let currentQuestion = document.getElementById("chosenQuestionText").innerHTML;
 
-    database.ref(questionPath)
-        .once('value')
-        .then((snapshot) => {
-            if (snapshot.exists()) {
-                const questions = snapshot.val();
-                const questionKeys = Object.keys(questions);
-                var questionData = questionKeys.map((key) => questions[key]);
+    for(let i = 0; i < databaseQuestionList.length; i++) {
+        if(currentQuestion == databaseQuestionList[i]['question']) {
+            let jsonObject = databaseQuestionList[i];
+            // let csvObject = convertToCSV(jsonObject);
+            // console.log(csvObject);
+            let jsonString = JSON.stringify(jsonObject);
+            console.log(jsonString);
 
-                for(let i = 0; i < questionData.length; i++) {
-                    if(questionData[i]['question'] == questionText) {
-                        var currentQuestionKey = String(questionKeys[i])
-                        newQuestionPath = `/question/${currentQuestionKey}`;
-                        database.ref(newQuestionPath)
-                            .remove()
-                            .then(() => {
-                                console.log(`Question with key deleted successfully`);
-                            })
-                            .catch((error) => {
-                                console.error(`Error deleting question with key:`, error);
-                        });
-                        window.location.href = "exambank-home.html";
-                        break;
-                    }
-                    else {
-                        console.log("No questions found");
-                    }
-                }     
-            }
-        })
-        .catch((error) => {
-            console.error('Error retrieving questions:', error);
-        });    
+            // Create a Blob object from the JSON string
+            const blob = new Blob([jsonString], { type: 'application/json' });
+
+            // Create a temporary anchor element
+            const anchorElement = document.createElement('a');
+
+            // Set the download attribute and the file name
+            anchorElement.setAttribute('href', window.URL.createObjectURL(blob));
+            anchorElement.setAttribute('download', 'question.json');
+
+            // Programmatically click the anchor element to trigger the download
+            anchorElement.click();
+
+            // Clean up the temporary anchor element
+            anchorElement.remove();
+            window.location.href = "exambank-home.html";
+        }
+    }
 }
 
 var optionsList = document.getElementsByClassName("selectQuestion")[0];
@@ -161,11 +152,7 @@ readJson().then(function(data) {
 })
 
 function execute() {
-    let confirmationText = "Are you sure you want to delete this question?";
-    if(confirm(confirmationText) == true) {
-        deleteQuestion();
-    }
-    else {
-        alert("Question deletion cancelled.")
-    }
+    readJson().then(function(data) {
+        exportQuestion(data);
+    })
 }

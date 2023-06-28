@@ -186,8 +186,9 @@
                 <a href="exambank-addquestion.html"><button>Add Questions</button></a>
                 <a href="exambank-editquestion.html"><button>Edit Questions</button></a>
                 <a href="exambank-deletequestion.html"><button>Delete Questions</button></a>
-                <button id="importBtn">Import Questions</button>
-                <button id="exportBtn">Export Questions</button>
+                <a href="exambank-exportquestion.html"><button>Export Questions</button></a>
+                <button onclick="importQuestion()">Import Questions</button>
+                <input type="file" id="importBtn" style="display:none;" accept=".json">
             </div>
         </main>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>

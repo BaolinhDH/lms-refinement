@@ -72,3 +72,47 @@ function populateQuestionTable(questionList) {
         }
     }
 } // End of populateQuestionTable
+
+// Stores the data on Firebase's Realtime Database then redirects back to exambank's homepage
+function sendQuestion(jsonData) {
+    console.log("Storing data...");
+    // Set the path to push to
+    var newDataRef = database.ref("question").push();
+    // Push the data to set path
+    newDataRef.set(jsonData)
+    .then(function() {
+        // Confirmation message
+        console.log("Data stored successfully!");
+        // Redirects back to exambank's homepage
+        location.reload();
+    })
+    // Error handling
+    .catch(function(error) {
+        console.error("Error storing data:", error);
+    });
+}
+
+function importQuestion() {
+    let importBtn = document.getElementById("importBtn");
+    importBtn.click();
+    importBtn.addEventListener("change", function() {handleFileUpload(event)});
+}
+
+function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const jsonContent = e.target.result;
+            var jsonData = JSON.parse(jsonContent);
+
+            let currentDate = new Date().toJSON().slice(0, 10);
+
+            jsonData['date'] = currentDate;
+
+            sendQuestion(jsonData);
+        };
+        reader.readAsText(file);
+    }
+}
+
