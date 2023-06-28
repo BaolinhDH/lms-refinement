@@ -53,7 +53,7 @@ function addQuestion() {
             {"answerChoice":"A", "text":answerA, "correct":answerA_correct},
             {"answerChoice":"B", "text":answerB, "correct":answerB_correct},
             {"answerChoice":"C", "text":answerC, "correct":answerC_correct},
-            {"answerChoice":"D", "text":answerD, "correct":answerD_correct},
+            {"answerChoice":"D", "text":answerD, "correct":answerD_correct}
         ];
     }
     else if(currentOption == "multipleAnswers") {

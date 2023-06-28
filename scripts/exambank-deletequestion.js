@@ -74,9 +74,10 @@ function populateQuestionBody(databaseQuestionList) {
         for(let i = 0; i < databaseQuestionList.length; i++) {
             let databaseQuestion = databaseQuestionList[i];
 
-            document.getElementsByClassName("questionText")[0].innerHTML = databaseQuestion['question'];
-
             if(currentOption == databaseQuestion['question']) {
+                document.getElementsByClassName("questionText")[0].innerHTML = databaseQuestion['question'];
+                document.getElementsByClassName("topicText")[0].innerHTML = databaseQuestion['topic'];
+                document.getElementsByClassName("typeText")[0].innerHTML = databaseQuestion['type'];
 
                 document.getElementsByName("answerA")[0].innerHTML = databaseQuestion['answers'][0]['text'];
                 if(databaseQuestion['answers'][0]['correct'] == "correct") {
@@ -116,6 +117,56 @@ function populateQuestionBody(databaseQuestionList) {
     }
 }
 
+function tickHandler(checkbox) {
+    if(checkbox.checked == true) {
+        checkbox.checked = false;
+    }
+    else if(checkbox.checked == false) {
+        checkbox.checked = true;
+    }
+}
+
+function deleteQuestion() {
+    // Specify the path to the collection of exams
+    const questionPath = '/question'; // Replace with the actual path in your database
+    let newQuestionPath;
+    let questionText = document.getElementsByClassName("questionText")[0].innerHTML;
+
+    database.ref(questionPath)
+        .once('value')
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                const questions = snapshot.val();
+                const questionKeys = Object.keys(questions);
+                var questionData = questionKeys.map((key) => questions[key]);
+
+                for(let i = 0; i < questionData.length; i++) {
+                    if(questionData[i]['question'] == questionText) {
+                        var currentQuestionKey = String(questionKeys[i])
+                        newQuestionPath = `/question/${currentQuestionKey}`;
+                        database.ref(newQuestionPath)
+                            .remove()
+                            .then(() => {
+                                console.log(`Question with key deleted successfully`);
+                            })
+                            .catch((error) => {
+                                console.error(`Error deleting question with key:`, error);
+                        });
+                        alert("Question deleted successfully")
+                        window.location.href = "exambank-home.html";
+                        break;
+                    }
+                    else {
+                        console.log("No questions found");
+                    }
+                }     
+            }
+        })
+        .catch((error) => {
+            console.error('Error retrieving questions:', error);
+        });    
+}
+
 var optionsList = document.getElementsByClassName("selectQuestion")[0];
 
 // Displays questions on the exam bank
@@ -124,3 +175,13 @@ readJson().then(function(data) {
     populateOptions(data);
     optionsList.onchange = function() {populateQuestionBody(data)};
 })
+
+function execute() {
+    let confirmationText = "Are you sure you want to delete this question?";
+    if(confirm(confirmationText) == true) {
+        deleteQuestion();
+    }
+    else {
+        alert("Question deletion cancelled.")
+    }
+}

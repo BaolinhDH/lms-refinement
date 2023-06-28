@@ -80,7 +80,7 @@
 
         <header id="sideMenu"> <!-- Header.  -->
             <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
-            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> <a href="exambank">Exam Bank</a> <span style="color: grey">></span> Edit Question</h2></span>
+            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> <a href="exambank-home.html">Exam Bank</a><br> <span style="color: grey">></span> Edit Question</h2></span>
 
             <aside> <!-- Secondary navigation. Contains in-course navigation -->
                 <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
@@ -119,41 +119,46 @@
                         <label for="chosenQuestion">Question: </label>
                         <span class="questionText" name="chosenQuestion" id="chosenQuestionText"></span>
 
+                        <span class="topicText" name="chosenQuestionTopic" id="chosenTopicText" style="display:none;"></span>
+
+                        <span class="typeText" name="chosenQuestionType" id="chosenTypeText" style="display:none;"></span>
+
+
                         <div class="answerList" id="answer1">
                             <div class="answer" name="answer1" value="incorrect">
                                 <label for="answerA">A: </label>
                                 <input type="text" id="answerText" name="answerA"></span>
-                                <input id="checkbox1" for="answerA" name="userInput1" type="checkbox">
+                                <input id="checkbox1" for="answerA" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer2" value="incorrect">
                                 <label for="answerB">B: </label>
                                 <input type="text" name="answerB"></input>
-                                <input id="checkbox2" name="userInput1" type="checkbox">
+                                <input id="checkbox2" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer3" value="incorrect">
                                 <label for="answerC">C: </label>
                                 <input type="text" name="answerC"></input>
-                                <input id="checkbox3" name="userInput1" type="checkbox">
+                                <input id="checkbox3" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer4" value="incorrect">
                                 <label for="answerD">D: </label>
                                 <input type="text" name="answerD"></input>
-                                <input id="checkbox4" name="userInput1" type="checkbox">
+                                <input id="checkbox4" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer5" value="incorrect" style="display:none;">
                                 <label for="answerE">E: </label>
                                 <input type="text" name="answerE"></input>
-                                <input id="checkbox5" name="userInput1" type="checkbox">
+                                <input id="checkbox5" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
                         </div> <!-- End of answerList -->                         
                     </div> <!-- End of question -->
                 </div>
 
-                <button id="editQuestionBtn">Edit Question</button>
+                <button id="editQuestionBtn" onclick="execute()">Edit Question</button>
             </div>
 
         </main>

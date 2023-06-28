@@ -80,7 +80,7 @@
 
         <header id="sideMenu"> <!-- Header.  -->
             <i class="fa-solid fa-bars"></i> <!-- aside tag closes upon clicking this -->
-            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> <a href="exambank">Exam Bank</a> <span style="color: grey">></span> Edit Question</h2></span>
+            <span><h2><a href="modules.html">UI/UX Design</a> <span style="color: grey">></span> <a href="exambank-home.html">Exam Bank</a><br> <span style="color: grey">></span> Delete Question</h2></span>
 
             <aside> <!-- Secondary navigation. Contains in-course navigation -->
                 <p>2024 Winter Semester</p> <!-- Replace with proper semester -->
@@ -99,7 +99,7 @@
             <div class="body">
                 <div class="questionSelector">
                     <select class="selectQuestion">
-                        <option>-- Select a Question To Edit --</option>
+                        <option>-- Select a Question To Delete --</option>
                         <option style="display:none;"></option>
                         <option style="display:none;"></option>
                         <option style="display:none;"></option>
@@ -114,46 +114,51 @@
                 </div>
     
                 <div class="questionBody">
-                    <!-- Start of question1 -->
+                    <!-- Start of question -->
                     <div class="question" style="display:none;">
                         <label for="chosenQuestion">Question: </label>
                         <span class="questionText" name="chosenQuestion" id="chosenQuestionText"></span>
 
+                        <span class="topicText" name="chosenQuestionTopic" id="chosenTopicText" style="display:none;"></span>
+
+                        <span class="typeText" name="chosenQuestionType" id="chosenTypeText" style="display:none;"></span>
+
+
                         <div class="answerList" id="answer1">
                             <div class="answer" name="answer1" value="incorrect">
                                 <label for="answerA">A: </label>
-                                <span id="answerText" name="answerA"></span>
-                                <input id="checkbox1" for="answerA" name="userInput1" type="checkbox">
+                                <span type="text" id="answerText" name="answerA"></span>
+                                <input id="checkbox1" for="answerA" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer2" value="incorrect">
                                 <label for="answerB">B: </label>
-                                <span name="answerB"></span>
-                                <input id="checkbox2" name="userInput1" type="checkbox">
+                                <span type="text" name="answerB"></span>
+                                <input id="checkbox2" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer3" value="incorrect">
                                 <label for="answerC">C: </label>
-                                <span name="answerC"></span>
-                                <input id="checkbox3" name="userInput1" type="checkbox">
+                                <span type="text" name="answerC"></span>
+                                <input id="checkbox3" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer4" value="incorrect">
                                 <label for="answerD">D: </label>
-                                <span name="answerD"></span>
-                                <input id="checkbox4" name="userInput1" type="checkbox">
+                                <span type="text" name="answerD"></span>
+                                <input id="checkbox4" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
 
                             <div class="answer" name="answer5" value="incorrect" style="display:none;">
                                 <label for="answerE">E: </label>
-                                <span name="answerE"></span>
-                                <input id="checkbox5" name="userInput1" type="checkbox">
+                                <span type="text" name="answerE"></span>
+                                <input id="checkbox5" name="userInput1" type="checkbox" onchange="tickHandler(this)">
                             </div>
                         </div> <!-- End of answerList -->                         
-                    </div> <!-- End of question1 -->
+                    </div> <!-- End of question -->
                 </div>
 
-                <button id="deleteQuestionBtn">Delete Question</button>
+                <button id="deleteQuestionBtn" onclick="execute()">Delete Question</button>
             </div>
 
         </main>
