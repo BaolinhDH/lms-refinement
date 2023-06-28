@@ -24,6 +24,25 @@
     color: #666666;
 }
 
+.answerList{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+}
+.answer{
+    display: block;
+}
+.answer > label{
+    display: inline;
+}
+.answer > span{
+    display: inline;
+}
+.answer > input{
+    float: left;
+    display: inline;
+}
+
 .answerOption {
     display: flex;
     align-items: center;
