@@ -1,5 +1,6 @@
 // courseID tells you whether the page is for course 1 2 3 or 4
 let courseID = document.head.querySelector("meta[content]").getAttribute("content");
+console.log(courseID);
 
 var database = firebase.database();
 
@@ -42,8 +43,8 @@ function populateQuestionTable(questionList) {
         // Check if its value is empty or not. If it is not empty, move to the next one
         if(placeholders[i].getAttribute("value") == "empty") {
             // If there are questions in the provided array, display it
-            if(questionList.length != 0) {
-                let question = questionList[0];
+            for(let x = 0; x < questionList.length; x++) {
+                let question = questionList[x];
                 
                 if(question["courseID"] == String(courseID)) {
                     if(question['topic'] == "ux") {
@@ -52,21 +53,21 @@ function populateQuestionTable(questionList) {
                     else if(question['topic'] == "aesthetic") {
                         placeholders[i].getElementsByClassName("topic")[0].innerHTML = "Aesthetic";
                     }
-    
+
                     if(question['type'] == "multipleChoice") {
                         placeholders[i].getElementsByClassName("type")[0].innerHTML = "Multiple Choice";
                     }
                     else if(question['type'] == "multipleAnswers") {
                         placeholders[i].getElementsByClassName("type")[0].innerHTML = "Multiple Answers";
                     }
-    
+
                     placeholders[i].getElementsByClassName("date")[0].innerHTML = question['date'];
                     placeholders[i].getElementsByClassName("questionText")[0].innerHTML = question['question'];
-    
+
                     // After displaying, change the attribute of the div to filled
                     placeholders[i].setAttribute("value", "filled");
-                    // Lastly, remove that question from the provided array
-                    questionList.splice(0, 1);
+                    questionList.splice(x, 1);
+                    break;
                 }
             }
         }
